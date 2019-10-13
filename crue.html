@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<script src="angularjs/angular.js"></script>
+		<script src="crud.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<h2>{{test}}</h2>
+	
+	<table border="1">
+			<tr>
+			<td>Name</td>
+			<td><input type="text" placeholder="Enter Name" ng-model="name" /></td>
+			</tr>
+			<tr>
+			<td>Quantity</td>
+			<td><input type="number" placeholder="Enter Quantity" ng-model="qty" /></td>
+			</tr>
+	
+			<tr>
+			<td><input ng-show="!filed" type="button" ng-click="add()" value="Save"/></td>
+			<td><input ng-hide="!filed" type="button" ng-click="update()" value="Update"/></td>
+			</tr>
+			
+			
+			
+	</table>
+	<hr/>
+	<table border="1">
+			<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td/>Quantity</td>
+			<td/>Edit</td>
+			<td/>Delete</td>
+			</tr>
+			
+			<tr ng-repeat="x in products">
+			<td>{{$index+1}}</td>
+			<td>{{x.name}}</td>
+			<td>{{x.qty}}</td>
+			<td><input type="button" ng-click="edit($index)" value="Edit"/></td>
+			<td><input type="button" ng-click="delete()" value="Delete"/></td>
+			</tr>
+	</table>
+
+
+
+</body>
+</html>
